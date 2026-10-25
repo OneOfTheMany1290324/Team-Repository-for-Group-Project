@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Alpha",
+    "team": "Product",
+    "status": "Healthy",
+    "revenue": 12000
+  },
+  {
+    "id": 2,
+    "name": "Beta",
+    "team": "Marketing",
+    "status": "Watch",
+    "revenue": 9800
+  },
+  {
+    "id": 3,
+    "name": "Gamma",
+    "team": "Sales",
+    "status": "Healthy",
+    "revenue": 15400
+  },
+  {
+    "id": 4,
+    "name": "Delta",
+    "team": "Support",
+    "status": "Critical",
+    "revenue": 7600
+  }
+]
