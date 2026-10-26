@@ -1,30 +1,28 @@
 
-import { useEffect } from 'react';
+// This is for the API handshake section.
+import { useState, useEffect } from 'react';
 
 function Dashboard() {
-    useEffect(() => {
-        fetch('/mock-dashboard.json')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch dashboard data');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                console.log('Dashboard data:', data);
-            })
-            .catch((error) => {
-                console.error('Dashboard fetch error:', error);
-            });
-    }, []);
+  const [users, setUsers] = useState([]);
+// useEffect allows for the fetching of the API.
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((data) => {
+        // Demonstrates proof of network connection.
+        console.log("Fetched users array:", data); 
+        setUsers(data);
+      })
+    //   Error handling if the fetch fails.
+      .catch((error) => console.error("Error fetching data:", error));
+}, []);
 
-    return (
-        <section className="page">
-            <p className="eyebrow">Workspace Dashboard</p>
-            <h1>Dashboard coming soon</h1>
-            <p className="lead">This section will be built by the team working on the dashboard data view.</p>
-        </section>
-    )
+  return (
+    <div>
+      <h2>API Handshake Test</h2>
+      <p>Successfully loaded {users.length} users. Check your browser console!</p>
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
